@@ -15,7 +15,7 @@ resource "aws_iam_policy_attachment" "instance_profile_policyattachment" {
   policy_arn = data.aws_iam_policy.instance_profile_policy.arn
 }
 resource "aws_iam_instance_profile" "test_profile" {
-  name = "ssm_instance_profile"
+  name = "aws_ssm_instance_profile"
   role = aws_iam_role.ssm-role.name
 }
 
