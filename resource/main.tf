@@ -47,6 +47,7 @@ module "stack_1" {
   instanceCount = var.instanceCount ## no of instance
   subnet_id = module.vpc.subnet_id
   environment = var.environment
+  eip_allocation_id = module.vpc.allocation_id[0]
   depends_on    = [module.vpc, module.iam]
 }
 
@@ -56,6 +57,7 @@ module "stack_2" {
   instanceCount = var.instanceCount ## no of instance
   subnet_id = module.vpc.subnet_id
   environment = var.environment
+  eip_allocation_id = module.vpc.allocation_id[1]
   depends_on    = [module.vpc, module.iam]
 }
 
@@ -65,6 +67,7 @@ module "stack_3" {
   instanceCount = var.instanceCount ## no of instance
   subnet_id = module.vpc.subnet_id 
   environment = var.environment
+  eip_allocation_id = module.vpc.allocation_id[2]
   depends_on    = [module.vpc, module.iam]
 }
 
@@ -74,6 +77,7 @@ module "stack_4" {
   instanceCount = var.instanceCount ## no of instance
   subnet_id = module.vpc.subnet_id
   environment = var.environment
+  eip_allocation_id = module.vpc.allocation_id[3]
   depends_on    = [module.vpc, module.iam]
   
 }
