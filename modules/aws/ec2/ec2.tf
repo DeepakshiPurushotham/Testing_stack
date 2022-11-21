@@ -26,7 +26,7 @@ data "aws_security_group" "selected" {
 resource "aws_eip_association" "eip_assoc" {
   count = var.instanceCount
   instance_id   = aws_instance.web-server[count.index].id
-  allocation_id = var.eip_assoc_id
+  allocation_id = var.eip_allocation_id
   depends_on = [
     aws_instance.web-server
   ]
