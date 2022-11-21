@@ -1,1 +1,1 @@
-environmet = "development"
+environment = "development"
