@@ -20,19 +20,13 @@ data "aws_iam_instance_profile" "instance_profile" {
 data "aws_security_group" "selected" {
   name = "cml-security-group"
 }
-data "aws_eip" "eip" {
-  count = var.instanceCount
-   tags = {
-    Name = "cml_eip${count.index}"
-  }
- }
 ########################################################
  ########## EIP Association #############
 ########################################################
 resource "aws_eip_association" "eip_assoc" {
   count = var.instanceCount
   instance_id   = aws_instance.web-server[count.index].id
-  allocation_id = data.aws_eip.eip[count.index].id
+  allocation_id = var.eip_assoc_id
   depends_on = [
     aws_instance.web-server
   ]
