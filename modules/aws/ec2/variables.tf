@@ -20,6 +20,9 @@ variable "environment" {
     type = string
     #default = "testing"
 }
+variable "eip_assoc_id" {
+  type = string
+}
 locals {
     common_tags = {
         DataTaxonomy = "Cisco Operatoins Data"
