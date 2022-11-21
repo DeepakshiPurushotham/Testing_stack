@@ -9,7 +9,7 @@ module "vpc" {
   publicSubnets2_cidr_block = var.publicSubnets2_cidr_block
   privateSubnets1_cidr_block = var.privateSubnets1_cidr_block
   privateSubnets2_cidr_block = var.privateSubnets2_cidr_block
-  environment = "testing"
+  environment = var.environment
 }
 output "instance_ip" {
   value = module.stack_1.instance_id
@@ -21,7 +21,7 @@ output "instance_ip" {
 module "s3" {
   source = "../modules/aws/s3"
   bucket_name = var.bucket_name
-  environment = "testing"
+  environment = var.environment
   depends_on = [
     module.vpc
   ]
@@ -32,7 +32,7 @@ module "s3" {
 #################################################################
 module "iam" {
   source = "../modules/aws/iam"
-  environment = "testing"
+  environment = var.environment
   depends_on = [
     module.vpc
   ]
@@ -46,7 +46,7 @@ module "stack_1" {
   instance_type = var.instance_type
   instanceCount = var.instanceCount ## no of instance
   subnet_id = module.vpc.subnet_id
-  environment = "testing"
+  environment = var.environment
   depends_on    = [module.vpc, module.iam]
 }
 
@@ -55,7 +55,7 @@ module "stack_2" {
   instance_type = var.instance_type
   instanceCount = var.instanceCount ## no of instance
   subnet_id = module.vpc.subnet_id
-  environment = "testing"
+  environment = var.environment
   depends_on    = [module.vpc, module.iam]
 }
 
@@ -64,7 +64,7 @@ module "stack_3" {
   instance_type = var.instance_type
   instanceCount = var.instanceCount ## no of instance
   subnet_id = module.vpc.subnet_id 
-  environment = "testing"
+  environment = var.environment
   depends_on    = [module.vpc, module.iam]
 }
 
@@ -73,7 +73,7 @@ module "stack_4" {
   instance_type = var.instance_type
   instanceCount = var.instanceCount ## no of instance
   subnet_id = module.vpc.subnet_id
-  environment = "testing"
+  environment = var.environment
   depends_on    = [module.vpc, module.iam]
   
 }
