@@ -17,7 +17,6 @@ variable "instanceCount" {
 }
 variable "environment" {
     type = string
-    default = "testing"
 }
 variable "bucket_name" {
   type = string
