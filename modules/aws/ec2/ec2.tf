@@ -14,7 +14,7 @@ data "aws_availability_zones" "azs" {
 }*/
 
 data "aws_iam_instance_profile" "instance_profile" {
-  name = "ssm_instance_profile"
+  name = "aws_ssm_instance_profile"
 }
 
 data "aws_security_group" "selected" {
