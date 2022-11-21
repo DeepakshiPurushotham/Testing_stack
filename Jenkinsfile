@@ -28,11 +28,11 @@ parameters {
                 
             }
         }
-      stage('TF_destroy') {
+      /*stage('TF_destroy') {
             steps {
             sh 'terraform -chdir="./resource" destroy -var-file="../vars/${environment}.tfvars" -target=module.${target} --auto-approve'
                 
             }
-        }
+        }*/
     }
 }
