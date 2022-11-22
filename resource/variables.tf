@@ -1,12 +1,4 @@
-variable "region" {
-    type = string
-    default = "us-west-1"
-}
 
-variable "profile" {
-    type = string
-    default = "default"
-}
 variable "instance_type" {
     type = string
     default = "t2.micro"
@@ -23,11 +15,6 @@ variable "bucket_name" {
   type = string
   default = "cml-stack-bucket"
 }
-
-/*variable "EIP_Count" {
-    type = number
-    default = 1
-}*/
 
 variable "vpc_cidr_block" {
     type = string
