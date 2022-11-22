@@ -18,7 +18,6 @@ variable "instanceCount" {
 
 variable "environment" {
     type = string
-    #default = "testing"
 }
 variable "eip_allocation_id" {
   type = string
