@@ -2,7 +2,7 @@ variable "bucket_name" {
   type = string
 }
 variable "environment" {
-  #default = "testing"
+  type = string
 }
 locals {
     common_tags = {
