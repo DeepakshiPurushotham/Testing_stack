@@ -3,15 +3,15 @@ data "aws_availability_zones" "azs" {
 }
 
 ### instance ###
-/*data "aws_ami" "amazon" {
+data "aws_ami" "amazon" {
   most_recent = true
-  owners           = ["amazon"]
+  owners           = ["self"]
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*"]
+    values = ["cml_cisco_on_aws"]
   }
-}*/
+}
 
 data "aws_iam_instance_profile" "instance_profile" {
   name = "aws_ssm_instance_profile"
