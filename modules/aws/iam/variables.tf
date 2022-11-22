@@ -10,5 +10,5 @@ locals {
     }
 }
 variable "environment" {
-  #default = "testing"
+    type = string
 }
