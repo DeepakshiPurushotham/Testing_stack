@@ -50,8 +50,8 @@ resource "aws_instance" "web-server" {
   vpc_security_group_ids      = [data.aws_security_group.selected.id]
   iam_instance_profile        = data.aws_iam_instance_profile.instance_profile.name
   ebs_block_device {
-    device_name = "/dev/xvda" # for additional volume on root device
-    #device_name = "/dev/sda1"  # for additional ebs volume
+    #device_name = "/dev/xvda" # for additional volume on root device
+    device_name = "/dev/sda1"  # for additional ebs volume
     volume_size = var.ebs_volume_size
   }
   tags = local.common_tags
