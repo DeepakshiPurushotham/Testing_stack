@@ -33,7 +33,7 @@ variable "environment" {
 }
 locals {
   common_tags = {
-    DataTaxonomy        = "Cisco Operatoins Data"
+    DataTaxonomy        = "Cisco Operations Data"
     Environment         = var.environment
     OwnerName           = ""
     ResourceOwner       = ""
